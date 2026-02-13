@@ -1,0 +1,13 @@
+# Ignore the virtual environment folder
+venv/
+.venv/
+
+# Ignore the secret file (CRITICAL)
+.env
+
+# Ignore compiled python files
+__pycache__/
+
+# Ignore heavy model files (too big for GitHub)
+final_toxic_model/
+lora_toxic_results/

@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+motor
+torch
+transformers
+peft
+pillow
+requests
+httpx
+python-multipart
+python-dotenv

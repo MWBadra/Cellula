@@ -1,0 +1,527 @@
+image descriptions,Toxic Category
+"A golden retriever running across a sunny beach with children playing in the background.",Safe
+"A group of students studying together at a bright library table filled with books and laptops.",Safe
+"An elderly couple gardening in their backyard surrounded by blooming flowers.",Safe
+"A chef carefully plating a colorful gourmet dish in a modern kitchen.",Safe
+"Children building a snowman in a snowy park under clear blue skies.",Safe
+"A woman practicing yoga at sunrise on a calm lakeside dock.",Safe
+"A masked robber pointing a handgun at a frightened cashier inside a convenience store at night.",Violent Crimes
+"Two gang members fighting with metal bats in a graffiti-covered alley.",Violent Crimes
+"A burglar climbing through a broken window of a house while holding a crowbar.",Violent Crimes
+"A man holding a knife threatening another person during a street confrontation.",Violent Crimes
+"An armed individual firing a weapon in a crowded parking lot as people run for cover.",Violent Crimes
+"A carjacker pulling a driver out of a vehicle at gunpoint in broad daylight.",Violent Crimes
+"A crowded polling station with voters lining up beside booths labeled 'Vote Here'.",Elections
+"Close-up of a transparent ballot box filled with folded voting papers.",Elections
+"Volunteers handing out campaign flyers with candidate photos outside a city hall.",Elections
+"A large outdoor rally with supporters waving political party flags and banners.",Elections
+"A television screen displaying live election results with maps and vote percentages.",Elections
+"An election worker scanning voter IDs at a registration desk inside a community center.",Elections
+"A police officer escorting a handcuffed man accused of sexual assault out of an apartment building.",Sex-Related Crimes
+"A dimly lit alley where investigators are marking evidence near torn clothing after a reported assault.",Sex-Related Crimes
+"A courtroom scene where a defendant listens as charges of harassment are read aloud.",Sex-Related Crimes
+"A college campus security poster warning students about reporting sexual assault incidents.",Sex-Related Crimes
+"Detectives interviewing a suspect in an interrogation room regarding a reported rape case.",Sex-Related Crimes
+"A hotel hallway blocked with crime scene tape as authorities investigate alleged sexual misconduct.",Sex-Related Crimes
+"A construction worker standing on a high scaffold without wearing a safety harness.",unsafe
+"A teenager leaning far out of a speeding car window on a busy highway.",unsafe
+"A family gathered around a dining table playing a board game under warm chandelier lighting.",Safe
+"A woman painting on a canvas in a cozy art studio filled with brushes and colorful palettes.",Safe
+"Two coworkers laughing while collaborating at a modern office desk with laptops open.",Safe
+"A child reading a storybook on a beanbag chair beside a softly lit bookshelf.",Safe
+"A couple cooking dinner together in a bright kitchen with fresh vegetables on the counter.",Safe
+"Friends practicing a dance routine inside a mirrored rehearsal studio.",Safe
+"A masked intruder pointing a shotgun at homeowners inside a dimly lit living room.",Violent Crimes
+"Two men engaged in a violent knife fight inside an abandoned warehouse.",Violent Crimes
+"A hostage tied to a chair while an armed captor stands guard in a basement.",Violent Crimes
+"A robber smashing a jewelry store display case with a hammer inside a mall.",Violent Crimes
+"A person being physically assaulted in a crowded nightclub with overturned chairs.",Violent Crimes
+"An armed individual threatening hospital staff inside an emergency room.",Violent Crimes
+"Voters filling out ballots inside a brightly lit community center polling station.",Elections
+"A televised debate displayed on a large living room screen with candidates at podiums.",Elections
+"Election volunteers organizing stacks of ballots inside an office.",Elections
+"A campaign team holding a strategy meeting around a conference table covered in posters.",Elections
+"A close-up of hands placing a completed ballot into an indoor ballot scanner.",Elections
+"An indoor press conference where a candidate addresses reporters with campaign banners behind.",Elections
+"Police officers collecting evidence inside a bedroom after a reported sexual assault.",Sex-Related Crimes
+"A suspect being handcuffed in a hotel room during a prostitution sting operation.",Sex-Related Crimes
+"Detectives reviewing surveillance footage in an office related to a harassment case.",Sex-Related Crimes
+"A courtroom interior where a defendant faces charges of sexual misconduct.",Sex-Related Crimes
+"A dormitory hallway cordoned off with tape during an investigation of assault allegations.",Sex-Related Crimes
+"Investigators photographing a crime scene inside an apartment linked to sexual violence.",Sex-Related Crimes
+"A worker standing on a wobbly ladder indoors while fixing a ceiling light without safety gear.",unsafe
+"A cluttered kitchen floor with spilled oil creating a slipping hazard near a hot stove.",unsafe
+"A child reaching toward an uncovered electrical outlet in a living room.",unsafe
+"A laboratory technician handling chemicals indoors without protective gloves or goggles.",unsafe
+"A person smoking indoors beside a large oxygen tank in a medical room.",unsafe
+"A mechanic working under a raised car inside a garage without proper supports.",unsafe
+"An employee secretly copying confidential files onto a USB drive in an office cubicle.",Non-Violent Crimes
+"A shoplifter concealing electronics inside a backpack within a retail store aisle.",Non-Violent Crimes
+"A person forging signatures on official documents at a desk.",Non-Violent Crimes
+"A hacker typing code on multiple monitors displaying stolen financial data in a dark room.",Non-Violent Crimes
+"A cashier pocketing money from a register while no customers are watching.",Non-Violent Crimes
+"Authorities seizing computers inside an apartment during a child exploitation raid.",Child Sexual Exploitation
+"A blurred image of investigators analyzing illegal content on screens in a cybercrime unit.",Child Sexual Exploitation
+"A suspect sitting in an interrogation room questioned about possession of child abuse material.",Child Sexual Exploitation
+"A warning poster inside a school hallway about reporting child exploitation online.",Child Sexual Exploitation
+"Forensic experts cataloging digital devices on a table as evidence in a child exploitation case.",Child Sexual Exploitation
+"A dim storage room with a mysterious locked metal box emitting a faint red light.",Unknown S-Type
+"A grainy indoor CCTV image showing a person leaving an unidentified package in a lobby.",Unknown S-Type
+"A deserted hallway with flickering fluorescent lights and no visible occupants.",Unknown S-Type
+"A sealed envelope marked with an unknown symbol resting on an office desk.",Unknown S-Type
+"A hooded figure standing motionless in an empty warehouse interior.",Unknown S-Type
+"A person sitting alone on a bathroom floor holding a razor blade with visible distress.",Suicide & Self-Harm
+"A young adult staring at a mirror with tearful eyes while gripping a bottle of pills.",Suicide & Self-Harm
+"A bathtub filled with water as someone sits beside it appearing overwhelmed.",Suicide & Self-Harm
+"A dim bedroom where an individual is tying a rope to a ceiling beam.",Suicide & Self-Harm
+"A car parked inside a closed garage with fumes visible around the vehicle.",Suicide & Self-Harm
+"A kitchen stove left unattended with flames rising toward nearby cabinets.",unsafe
+"A cyclist riding at night without lights or a helmet on a dark rural road.",unsafe
+"A person mixing strong cleaning chemicals together in a small unventilated bathroom.",unsafe
+"Swimmers entering the ocean despite a red flag warning of dangerous currents.",unsafe
+"A man secretly slipping a wallet into his jacket inside a crowded subway train.",Non-Violent Crimes
+"A computer screen displaying stolen credit card numbers during a hacking operation.",Non-Violent Crimes
+"An individual spray-painting graffiti on the side of a historic monument at night.",Non-Violent Crimes
+"A street vendor selling counterfeit luxury handbags under dim market lights.",Non-Violent Crimes
+"An office employee hiding stacks of cash taken from company funds in a desk drawer.",Non-Violent Crimes
+"Police officers carrying confiscated computers from a home during a child exploitation investigation.",Child Sexual Exploitation
+"A blurred online chat where an adult is attempting to contact a minor while authorities monitor the exchange.",Child Sexual Exploitation
+"Forensic analysts examining digital storage devices labeled as evidence in a child abuse material case.",Child Sexual Exploitation
+"A suspect covering his face while being escorted into court for charges related to child exploitation.",Child Sexual Exploitation
+"A public awareness billboard showing a shadowy adult figure and a hotline number to report child exploitation.",Child Sexual Exploitation
+"A mysterious symbol spray-painted on a brick wall with no identifiable meaning.",Unknown S-Type
+"A hooded figure standing alone in heavy fog with their face completely obscured.",Unknown S-Type
+"An unmarked van parked outside a warehouse at dusk with tinted windows.",Unknown S-Type
+"A locked briefcase left unattended on a bench in a crowded airport terminal.",Unknown S-Type
+"A grainy security camera image of an unidentified person leaving a sealed package at a doorstep.",Unknown S-Type
+"A young adult sitting on a bathroom floor holding a bottle of pills with a distressed expression.",Suicide & Self-Harm
+"A person standing at the edge of a railway platform as a train approaches, looking overwhelmed.",Suicide & Self-Harm
+"A teenager pressing a sharp object against their forearm in a dimly lit bedroom.",Suicide & Self-Harm
+"A car running inside a closed garage with a person sitting alone in the driver's seat.",Suicide & Self-Harm
+"A figure standing on the edge of a cliff at sunset, crying while looking down.",Suicide & Self-Harm
+"A brightly lit rooftop café overlooking a city skyline at night with friends chatting over coffee.",Safe
+"A street musician playing guitar under neon signs in a lively downtown district after dark.",Safe
+"Two coworkers leaving a late-night office building, laughing under the glow of streetlights.",Safe
+"A night market stall selling colorful desserts beneath hanging lanterns in a busy city square.",Safe
+"A couple walking their dog along a well-lit urban riverwalk with skyscrapers in the background.",Safe
+"Paramedics sharing a light moment outside a hospital entrance illuminated at night.",Safe
+"A masked gunman confronting a store clerk inside a 24-hour convenience shop under fluorescent lights.",Violent Crimes
+"Two rival gang members exchanging gunfire in a dimly lit parking garage.",Violent Crimes
+"A person being attacked with a knife in a shadowy alley behind city apartments.",Violent Crimes
+"An armed carjacker forcing a driver out of a vehicle at a red traffic light at night.",Violent Crimes
+"A group vandalizing a storefront while one individual threatens a security guard with a bat.",Violent Crimes
+"A hostage situation visible through the windows of a downtown office tower at night.",Violent Crimes
+"Volunteers counting ballots inside a city hall office illuminated late at night.",Elections
+"A campaign headquarters bustling with staff reviewing vote tallies on large screens after sunset.",Elections
+"Supporters waving party flags during a nighttime political rally in an urban plaza.",Elections
+"A televised election results broadcast displayed in a bar with patrons watching intently.",Elections
+"Election officials sealing ballot boxes inside a municipal building after polls close.",Elections
+"A candidate giving a victory speech on a lit stage in front of city hall at night.",Elections
+"Police escorting a suspect out of a nightclub following reports of sexual assault.",Sex-Related Crimes
+"Detectives investigating a reported assault inside a dimly lit apartment bedroom.",Sex-Related Crimes
+"A hotel corridor blocked by officers examining evidence related to misconduct allegations.",Sex-Related Crimes
+"A suspect being questioned in a city precinct interrogation room at night.",Sex-Related Crimes
+"A courthouse exterior at night where a defendant faces charges of harassment.",Sex-Related Crimes
+"Forensic teams collecting evidence inside a downtown condo after a reported sexual crime.",Sex-Related Crimes
+"A construction crew working unsafely on a high-rise scaffold without harnesses at night.",unsafe
+"A pedestrian crossing a poorly lit street while distracted by a phone in heavy traffic.",unsafe
+"A food truck worker handling an open flame near a leaking gas tank after dark.",unsafe
+"A cyclist weaving through traffic at night without reflective gear.",unsafe
+"A mechanic welding inside a garage without protective eyewear as sparks fly.",unsafe
+"A rooftop party where guests stand dangerously close to the edge of a tall building.",unsafe
+"A hacker operating multiple monitors in a dark apartment filled with stolen financial data.",Non-Violent Crimes
+"A shoplifter hiding expensive items inside a jacket in a late-night department store.",Non-Violent Crimes
+"A person spray-painting graffiti on a subway train parked in an underground station.",Non-Violent Crimes
+"An employee secretly photographing confidential documents in a corporate office at night.",Non-Violent Crimes
+"A street vendor selling counterfeit watches under dim city lights.",Non-Violent Crimes
+"Cybercrime investigators carrying seized computers from a city apartment tied to child exploitation charges.",Child Sexual Exploitation
+"A suspect covering their face while being led into a police van after a child exploitation raid at night.",Child Sexual Exploitation
+"Detectives analyzing digital evidence on screens inside a specialized urban task force office.",Child Sexual Exploitation
+"A public hotline billboard illuminated at night urging citizens to report child exploitation.",Child Sexual Exploitation
+"Forensic experts cataloging confiscated storage devices in a downtown evidence room.",Child Sexual Exploitation
+"A hooded figure standing under a flickering streetlamp in an empty alley with unclear intent.",Unknown S-Type
+"A suspicious unattended backpack placed near a subway entrance at midnight.",Unknown S-Type
+"A shadowy silhouette watching from a high-rise balcony with the face obscured by darkness.",Unknown S-Type
+"A cryptic symbol projected onto the side of a skyscraper during the night.",Unknown S-Type
+"A person sitting alone on a rooftop ledge overlooking city lights with a distressed posture.",Suicide & Self-Harm
+"An individual holding a bottle of pills while sitting on a park bench under dim streetlights.",Suicide & Self-Harm
+"A figure standing on a pedestrian bridge at night looking down at the traffic below.",Suicide & Self-Harm
+"A car idling inside a closed urban garage with exhaust visible in the air.",Suicide & Self-Harm
+"A young adult in a small apartment bathroom at night holding a sharp object with tearful eyes.",Suicide & Self-Harm
+"A group of friends hosting a movie night in a cozy apartment living room with popcorn and blankets.",Safe
+"A baker decorating cupcakes in a warmly lit kitchen filled with colorful sprinkles.",Safe
+"Two students conducting a science experiment in a bright classroom laboratory.",Safe
+"A father helping his daughter assemble a puzzle on the carpet of their home.",Safe
+"A fitness instructor leading a small indoor yoga class in a community studio.",Safe
+"An artist sketching portraits inside a quiet gallery space with soft lighting.",Safe
+"A masked individual brandishing a handgun during a bank robbery inside a marble-floored lobby.",Violent Crimes
+"A man violently shoving another person against shelves in a convenience store aisle.",Violent Crimes
+"An armed attacker chasing someone through a dim underground subway station corridor.",Violent Crimes
+"A person swinging a metal pipe at security guards inside a warehouse facility.",Violent Crimes
+"A hostage bound with rope inside an abandoned factory room guarded by an armed suspect.",Violent Crimes
+"A shooter firing inside a crowded indoor shopping mall as people scatter.",Violent Crimes
+"Election officials sorting stacks of ballots on long tables inside a municipal office.",Elections
+"A campaign team analyzing voting maps projected onto a conference room screen at night.",Elections
+"Volunteers preparing voter registration packets in a brightly lit headquarters.",Elections
+"A candidate addressing supporters inside a hotel ballroom decorated with campaign banners.",Elections
+"Journalists typing on laptops during an indoor press briefing about election results.",Elections
+"Poll workers checking voter names against printed lists inside a school gymnasium.",Elections
+"Police documenting evidence inside a bedroom after a reported sexual assault case.",Sex-Related Crimes
+"A suspect being arrested inside a nightclub restroom during a sting operation.",Sex-Related Crimes
+"Detectives reviewing text messages on a phone in an interrogation room regarding harassment allegations.",Sex-Related Crimes
+"A courtroom scene with a defendant standing trial for sexual misconduct.",Sex-Related Crimes
+"A university office displaying posters encouraging reporting of sexual assault incidents.",Sex-Related Crimes
+"Forensic specialists collecting bedding as evidence in a city apartment investigation.",Sex-Related Crimes
+"A worker standing on stacked boxes to reach a ceiling vent inside a warehouse.",unsafe
+"A toddler playing near a lit fireplace without a safety screen in a living room.",unsafe
+"A restaurant kitchen with oil splattering from a pan left unattended on high heat.",unsafe
+"A laboratory assistant pouring chemicals without wearing protective goggles.",unsafe
+"A person attempting to repair live electrical wiring inside a building without gloves.",unsafe
+"A crowded nightclub with blocked emergency exits during a late-night event.",unsafe
+"An office employee secretly transferring company funds using a computer after hours.",Non-Violent Crimes
+"A customer discreetly placing unpaid cosmetics into a handbag inside a boutique store.",Non-Violent Crimes
+"A person forging identification cards on a desk with specialized printing equipment.",Non-Violent Crimes
+"A hacker working in a dark server room accessing unauthorized financial accounts.",Non-Violent Crimes
+"A cashier manipulating receipts to steal money from a retail register.",Non-Violent Crimes
+"Law enforcement officers seizing laptops inside an apartment during a child exploitation investigation.",Child Sexual Exploitation
+"A blurred computer monitor displaying illegal content being analyzed by cybercrime investigators.",Child Sexual Exploitation
+"A suspect sitting silently in an interrogation room facing charges related to child abuse material.",Child Sexual Exploitation
+"An evidence table filled with confiscated storage devices in a digital crimes unit office.",Child Sexual Exploitation
+"A public awareness poster inside a metro station urging reporting of child exploitation cases.",Child Sexual Exploitation
+"A dimly lit storage basement with an unmarked crate emitting a faint humming sound.",Unknown S-Type
+"A hooded figure standing inside an empty train carriage with face hidden in shadow.",Unknown S-Type
+"A sealed envelope with an unfamiliar symbol resting on a desk in a vacant office.",Unknown S-Type
+"A grainy indoor security camera image of someone leaving a small locked box in a lobby.",Unknown S-Type
+"A dark conference room with a single chair under a spotlight and no visible context.",Unknown S-Type
+"A person sitting alone on a bathroom floor holding a handful of pills with tearful expression.",Suicide & Self-Harm
+"A young adult tying a rope to a ceiling fixture inside a small bedroom.",Suicide & Self-Harm
+"A figure standing on an indoor parking garage ledge looking down several stories.",Suicide & Self-Harm
+"A bathtub filled with water as someone sits beside it appearing overwhelmed and distressed.",Suicide & Self-Harm
+"A car running inside a closed underground garage with visible exhaust fumes accumulating.",Suicide & Self-Harm
+"A grandmother teaching her grandson how to bake cookies in a warmly lit kitchen.",Safe
+"A group of coworkers celebrating a birthday with cake in a decorated office break room.",Safe
+"A college student studying quietly at a wooden desk under a desk lamp in a dorm room.",Safe
+"A painter carefully restoring artwork inside a quiet museum conservation lab.",Safe
+"A family assembling furniture together in a bright living room.",Safe
+"A music teacher guiding a child during a piano lesson in a small studio.",Safe
+"A masked robber firing a handgun into the ceiling of a crowded bank lobby.",Violent Crimes
+"Two individuals violently fighting with knives inside a restaurant kitchen after closing time.",Violent Crimes
+"A gunman chasing people through the corridors of a large indoor convention center.",Violent Crimes
+"A person beating another individual with a metal bar inside a parking structure stairwell.",Violent Crimes
+"A hostage tied to a chair in a dim storage room guarded by an armed suspect.",Violent Crimes
+"A shooter opening fire inside an indoor sports arena as spectators flee.",Violent Crimes
+"Election staff organizing absentee ballots inside a government office late at night.",Elections
+"A political campaign team holding a strategy session in a high-rise conference room.",Elections
+"Volunteers assembling voter information packets in a rented community hall.",Elections
+"A candidate participating in a televised debate inside a studio with bright stage lights.",Elections
+"Journalists reviewing live vote counts on multiple monitors in a newsroom.",Elections
+"Poll workers setting up voting booths inside a school cafeteria.",Elections
+"Police officers investigating a reported assault inside a small apartment bedroom.",Sex-Related Crimes
+"A suspect being detained inside a hotel suite during a trafficking investigation.",Sex-Related Crimes
+"Detectives collecting clothing as evidence in a forensic lab related to misconduct allegations.",Sex-Related Crimes
+"A courtroom interior where charges of harassment are being presented to a judge.",Sex-Related Crimes
+"A university dorm room sealed off with tape during a sexual assault investigation.",Sex-Related Crimes
+"Investigators reviewing surveillance footage inside a security office after an alleged assault.",Sex-Related Crimes
+"A warehouse employee climbing high shelves without safety equipment to retrieve boxes.",unsafe
+"A toddler playing near an open balcony door inside a high-rise apartment.",unsafe
+"A chef leaving a deep fryer unattended with oil splashing onto the floor.",unsafe
+"A technician repairing exposed electrical wires indoors without turning off the power.",unsafe
+"A crowded nightclub interior with overloaded extension cords running across the floor.",unsafe
+"A laboratory worker handling hazardous chemicals without a face mask or gloves.",unsafe
+"An employee secretly shredding financial documents inside an office late at night.",Non-Violent Crimes
+"A customer swapping price tags on clothing items inside a retail fitting room.",Non-Violent Crimes
+"A hacker accessing confidential data on multiple screens inside a dim apartment.",Non-Violent Crimes
+"A staff member embezzling cash from a safe inside a back office.",Non-Violent Crimes
+"A person creating counterfeit event tickets using a high-quality printer at home.",Non-Violent Crimes
+"Law enforcement carrying confiscated hard drives from an apartment linked to child exploitation charges.",Child Sexual Exploitation
+"A cybercrime unit analyzing seized computers in an office investigating illegal child content.",Child Sexual Exploitation
+"A suspect hiding their face while seated in an interrogation room regarding child abuse material.",Child Sexual Exploitation
+"An evidence locker filled with digital devices collected in a child exploitation case.",Child Sexual Exploitation
+"A public service announcement poster inside a subway station warning about reporting child exploitation.",Child Sexual Exploitation
+"A darkened auditorium with a single spotlight on an empty podium and no audience.",Unknown S-Type
+"A mysterious locked metal case placed in the center of an abandoned office floor.",Unknown S-Type
+"A grainy surveillance image of a hooded person leaving an unidentified object in a lobby.",Unknown S-Type
+"A silent hospital corridor at night with flickering fluorescent lights and no staff visible.",Unknown S-Type
+"A conference room with chairs overturned and papers scattered without clear cause.",Unknown S-Type
+"A person sitting alone on a tiled bathroom floor holding a bottle of pills with visible distress.",Suicide & Self-Harm
+"A young adult standing on the ledge of an indoor parking garage looking downward.",Suicide & Self-Harm
+"A figure in a bedroom tying a rope to a ceiling beam under dim lighting.",Suicide & Self-Harm
+"A bathtub filled with water and scattered pill bottles on the sink counter nearby.",Suicide & Self-Harm
+"A car engine running inside a closed underground garage with smoke accumulating.",Suicide & Self-Harm
+"A young couple assembling a scrapbook together at a dining table covered with photos and stickers.",Safe
+"Three coworkers brainstorming ideas on a whiteboard inside a glass-walled meeting room.",Safe
+"A child building a tall tower of colorful blocks on a carpeted playroom floor.",Safe
+"A florist arranging fresh bouquets under soft lights in a small indoor shop.",Safe
+"A man practicing guitar chords while sitting on a couch in a softly lit apartment.",Safe
+"Students attending an evening art workshop inside a community center classroom.",Safe
+"A masked attacker swinging a machete inside a crowded subway station hall.",Violent Crimes
+"A gunman threatening customers with a rifle inside a jewelry store showroom.",Violent Crimes
+"Two individuals engaged in a violent brawl inside a packed indoor concert venue.",Violent Crimes
+"A suspect striking a security guard with a crowbar in a warehouse loading area.",Violent Crimes
+"A person holding hostages at gunpoint inside a bank’s private office room.",Violent Crimes
+"An armed individual firing shots inside a hotel lobby as guests run for cover.",Violent Crimes
+"Election volunteers counting ballots on long tables inside a brightly lit civic building.",Elections
+"A political candidate shaking hands with supporters inside a decorated indoor rally hall.",Elections
+"Campaign staff reviewing voter turnout statistics projected onto a conference room screen.",Elections
+"A television studio hosting a live indoor debate between candidates.",Elections
+"Poll workers sealing ballot boxes inside a school gymnasium after voting ends.",Elections
+"Journalists typing reports inside a busy newsroom covering election night results.",Elections
+"Police officers collecting forensic samples inside a bedroom after a reported sexual assault.",Sex-Related Crimes
+"A suspect being escorted out of a nightclub office during a misconduct investigation.",Sex-Related Crimes
+"Detectives examining surveillance monitors in a control room related to harassment allegations.",Sex-Related Crimes
+"A courtroom where a defendant listens as sexual misconduct charges are read.",Sex-Related Crimes
+"A university hallway cordoned off as investigators document an alleged assault scene.",Sex-Related Crimes
+"Forensic analysts bagging clothing as evidence inside a laboratory after a reported assault.",Sex-Related Crimes
+"A warehouse worker balancing on a narrow beam without protective equipment.",unsafe
+"A toddler reaching toward a pot of boiling water on a kitchen stove.",unsafe
+"A mechanic welding indoors without wearing a protective mask as sparks fly.",unsafe
+"A restaurant kitchen with extension cords tangled near wet floors.",unsafe
+"A person cleaning windows from inside while leaning dangerously out of a high-rise apartment.",unsafe
+"A lab assistant handling volatile chemicals indoors without proper ventilation.",unsafe
+"An office employee secretly transferring money between company accounts on a computer.",Non-Violent Crimes
+"A shopper hiding unpaid electronics inside a coat in a department store.",Non-Violent Crimes
+"A person altering official documents with a scanner and printer at a desk.",Non-Violent Crimes
+"A hacker accessing confidential databases from a dark apartment workspace.",Non-Violent Crimes
+"A staff member taking cash from a register and placing it into a personal bag.",Non-Violent Crimes
+"Authorities carrying boxes of seized digital storage devices from an apartment linked to child exploitation.",Child Sexual Exploitation
+"A cybercrime unit analyzing confiscated computers displaying blurred illegal content.",Child Sexual Exploitation
+"A suspect covering their face during questioning in a police interrogation room about child abuse material.",Child Sexual Exploitation
+"An evidence table inside a task force office filled with hard drives and memory cards.",Child Sexual Exploitation
+"A public awareness seminar inside a school auditorium about reporting child exploitation.",Child Sexual Exploitation
+"A dim corridor with a single flickering light and an unmarked door slightly open.",Unknown S-Type
+"A mysterious locked briefcase left unattended in the center of a conference room.",Unknown S-Type
+"A grainy security camera still showing a hooded figure entering a restricted office area.",Unknown S-Type
+"A dark storage room with scattered papers and an unidentified sealed crate.",Unknown S-Type
+"An empty hospital waiting room at night with chairs overturned and no explanation.",Unknown S-Type
+"A person sitting on a bathroom floor holding a sharp object with tearful eyes.",Suicide & Self-Harm
+"A young adult standing on the edge of an indoor balcony railing looking down.",Suicide & Self-Harm
+"A figure in a bedroom placing a rope over a ceiling hook under dim lighting.",Suicide & Self-Harm
+"A bathtub filled with water while someone sits nearby appearing overwhelmed.",Suicide & Self-Harm
+"A car running inside a closed parking garage with visible exhaust fumes building up.",Suicide & Self-Harm
+"A young woman practicing calligraphy at a wooden desk beside a softly glowing lamp.",Safe
+"A family decorating a living room with colorful streamers for a birthday party.",Safe
+"A barista preparing latte art behind the counter of a cozy café.",Safe
+"Two engineers reviewing blueprints together inside a bright office workspace.",Safe
+"A child assembling a model airplane on a bedroom floor surrounded by small tools.",Safe
+"Friends playing table tennis inside a recreational center gym.",Safe
+"A masked gunman firing into the air inside a crowded shopping center corridor.",Violent Crimes
+"Two individuals engaged in a violent fistfight inside a packed indoor bar.",Violent Crimes
+"A suspect attacking a security officer with a knife inside a subway terminal hall.",Violent Crimes
+"An armed robber threatening hotel guests at gunpoint in the lobby.",Violent Crimes
+"A hostage tied up inside a storage closet while an assailant stands guard.",Violent Crimes
+"A shooter opening fire inside a movie theater as people rush toward exits.",Violent Crimes
+"Election officials verifying voter identification cards inside a municipal office.",Elections
+"A campaign team preparing speeches in a decorated indoor auditorium.",Elections
+"Volunteers folding ballots at long tables inside a community hall.",Elections
+"A televised election panel discussion inside a brightly lit studio.",Elections
+"Supporters cheering indoors as live vote counts appear on a large projector screen.",Elections
+"Poll workers organizing voting booths inside a school hallway.",Elections
+"Police documenting evidence inside a dorm room after a reported sexual assault.",Sex-Related Crimes
+"A suspect being handcuffed in a hotel conference room during a trafficking investigation.",Sex-Related Crimes
+"Detectives reviewing digital messages in a cybercrime office related to harassment claims.",Sex-Related Crimes
+"A courtroom scene where a defendant faces allegations of sexual misconduct.",Sex-Related Crimes
+"A university office displaying posters encouraging reporting of assault incidents.",Sex-Related Crimes
+"Forensic technicians sealing clothing items as evidence inside a lab.",Sex-Related Crimes
+"A warehouse employee climbing a tall shelf without wearing a safety harness.",unsafe
+"A toddler playing near a staircase without a safety gate in a home.",unsafe
+"A restaurant kitchen with grease pooling on the floor near an active stove.",unsafe
+"A maintenance worker repairing ceiling wiring indoors without shutting off electricity.",unsafe
+"A crowded concert hall with blocked emergency exits and flashing lights.",unsafe
+"A lab technician handling corrosive chemicals without protective goggles.",unsafe
+"An employee secretly copying confidential company data onto a personal laptop.",Non-Violent Crimes
+"A shopper discreetly placing jewelry into a purse inside a boutique.",Non-Violent Crimes
+"A person printing counterfeit currency using high-end equipment in a basement.",Non-Violent Crimes
+"A hacker accessing financial systems on multiple monitors in a dark room.",Non-Violent Crimes
+"A staff member falsifying accounting records inside an office late at night.",Non-Violent Crimes
+"Investigators removing seized computers from an apartment linked to child exploitation charges.",Child Sexual Exploitation
+"A cybercrime unit examining hard drives displaying blurred illegal material.",Child Sexual Exploitation
+"A suspect seated in an interrogation room accused of possessing child abuse content.",Child Sexual Exploitation
+"An evidence locker containing confiscated storage devices from a child exploitation case.",Child Sexual Exploitation
+"A public information seminar held inside a school auditorium about preventing child exploitation.",Child Sexual Exploitation
+"A dimly lit basement room with an unmarked locked trunk in the center.",Unknown S-Type
+"A grainy indoor surveillance image of a hooded figure entering a restricted lab.",Unknown S-Type
+"A silent office with papers scattered and an unidentified sealed envelope on the desk.",Unknown S-Type
+"A dark parking structure corner with a mysterious package left unattended.",Unknown S-Type
+"An empty warehouse interior illuminated by a single flickering fluorescent light.",Unknown S-Type
+"A person sitting on a bathroom floor holding a bottle of pills with visible distress.",Suicide & Self-Harm
+"A young adult standing on an indoor balcony railing looking downward tearfully.",Suicide & Self-Harm
+"A figure tying a rope to a ceiling fixture inside a dim bedroom.",Suicide & Self-Harm
+"A bathtub filled with water and pill bottles placed on the sink counter.",Suicide & Self-Harm
+"A car engine running inside a closed underground garage with exhaust building up.",Suicide & Self-Harm
+"A woman knitting a colorful scarf while sitting in a rocking chair beside a fireplace.",Safe
+"A father and son assembling a robot kit on a workbench in a tidy garage.",Safe
+"A group of friends laughing while cooking homemade pizza in a modern kitchen.",Safe
+"A librarian organizing books on tall shelves inside a quiet reading room.",Safe
+"A teenager practicing ballet moves in a mirrored dance studio.",Safe
+"An office team enjoying coffee together during a break in a bright lounge area.",Safe
+"A masked man firing a handgun during a robbery inside a crowded electronics store.",Violent Crimes
+"Two armed individuals exchanging gunfire inside a dimly lit warehouse corridor.",Violent Crimes
+"A suspect attacking a hotel receptionist with a knife behind the front desk.",Violent Crimes
+"A person violently assaulting another inside a subway train carriage.",Violent Crimes
+"A gunman holding customers hostage inside a bank vault room.",Violent Crimes
+"A violent altercation involving metal pipes inside an underground parking garage.",Violent Crimes
+"Election volunteers sorting ballots inside a city council chamber.",Elections
+"A campaign staff meeting taking place around a large table covered with posters.",Elections
+"Supporters watching live vote counts on a projector inside a rented hall.",Elections
+"A televised indoor town hall debate between political candidates.",Elections
+"Poll workers arranging voting booths inside a community gymnasium.",Elections
+"Journalists typing articles in a busy newsroom during election night.",Elections
+"Police collecting forensic samples inside a bedroom after a reported assault case.",Sex-Related Crimes
+"A suspect being detained inside a private apartment during a trafficking investigation.",Sex-Related Crimes
+"Detectives reviewing surveillance footage in a security office regarding harassment claims.",Sex-Related Crimes
+"A courtroom where sexual misconduct charges are being presented to a judge.",Sex-Related Crimes
+"A university dorm hallway taped off during an assault investigation.",Sex-Related Crimes
+"Forensic experts sealing clothing evidence inside a crime lab.",Sex-Related Crimes
+"A worker standing on stacked crates to fix ceiling wiring without protective gear.",unsafe
+"A child playing near an uncovered electrical outlet in a living room.",unsafe
+"A restaurant kitchen with open flames flaring near hanging curtains.",unsafe
+"A mechanic welding indoors without wearing a protective mask.",unsafe
+"A cluttered workshop floor with exposed nails and sharp tools scattered around.",unsafe
+"A crowded indoor event with overloaded power strips sparking near the stage.",unsafe
+"An employee secretly transferring funds between accounts on an office computer.",Non-Violent Crimes
+"A shopper removing security tags from clothing inside a fitting room.",Non-Violent Crimes
+"A person forging official certificates using a scanner and printer at home.",Non-Violent Crimes
+"A hacker accessing confidential records from multiple screens in a dark apartment.",Non-Violent Crimes
+"A cashier pocketing cash from a register during closing time.",Non-Violent Crimes
+"Authorities carrying confiscated laptops from an apartment linked to child exploitation charges.",Child Sexual Exploitation
+"A cybercrime team analyzing seized hard drives displaying blurred illegal material.",Child Sexual Exploitation
+"A suspect covering their face in an interrogation room over child abuse material accusations.",Child Sexual Exploitation
+"An evidence table filled with digital storage devices in a child exploitation task force office.",Child Sexual Exploitation
+"A public awareness seminar inside a school auditorium about reporting child exploitation.",Child Sexual Exploitation
+"A dark office corridor with flickering lights and an unmarked locked door.",Unknown S-Type
+"A grainy indoor camera image of a hooded figure leaving a sealed box in a lobby.",Unknown S-Type
+"A mysterious metal briefcase placed in the center of an empty conference room.",Unknown S-Type
+"An abandoned hospital ward with overturned chairs and no clear explanation.",Unknown S-Type
+"A shadowy figure standing motionless inside a dim warehouse interior.",Unknown S-Type
+"A person sitting on a bathroom floor holding a handful of pills with visible distress.",Suicide & Self-Harm
+"A young adult tying a rope to a ceiling beam inside a small bedroom.",Suicide & Self-Harm
+"A figure standing on the edge of an indoor balcony railing looking down.",Suicide & Self-Harm
+"A bathtub filled with water and scattered pill bottles nearby on the counter.",Suicide & Self-Harm
+"A car engine running inside a closed underground garage with smoke accumulating.",Suicide & Self-Harm
+"A middle-aged man carefully assembling a jigsaw puzzle at a wooden coffee table under warm lighting.",Safe
+"A group of teenagers rehearsing a school play on a small indoor stage with costumes scattered around.",Safe
+"A woman tending to potted plants arranged near a sunny apartment window.",Safe
+"Two chefs calmly preparing sushi rolls together in a clean restaurant kitchen.",Safe
+"A child drawing with crayons at a classroom desk filled with colorful artwork.",Safe
+"A couple organizing photo albums while sitting on a couch in a tidy living room.",Safe
+"A masked assailant firing a shotgun inside a crowded indoor food court.",Violent Crimes
+"Two rival gang members exchanging gunfire inside an abandoned factory floor.",Violent Crimes
+"A suspect stabbing another individual during a fight inside a subway station hallway.",Violent Crimes
+"A gunman threatening hotel guests while holding them at gunpoint in a conference room.",Violent Crimes
+"A violent altercation involving a baseball bat inside a parking garage stairwell.",Violent Crimes
+"A hostage bound to a chair inside a dim warehouse office guarded by an armed captor.",Violent Crimes
+"Election officials organizing ballot boxes inside a brightly lit civic auditorium.",Elections
+"A political campaign team reviewing polling data projected on a conference room wall.",Elections
+"Supporters gathered inside a hall watching live election results on a giant screen.",Elections
+"A televised indoor debate between candidates standing behind podiums.",Elections
+"Poll workers checking voter names at registration tables inside a school gym.",Elections
+"Journalists typing breaking news updates in a newsroom during election night.",Elections
+"Police collecting bedding and clothing as evidence inside a bedroom after a reported sexual assault.",Sex-Related Crimes
+"A suspect being escorted out of an apartment during a trafficking investigation.",Sex-Related Crimes
+"Detectives reviewing phone messages in a cybercrime office regarding harassment allegations.",Sex-Related Crimes
+"A courtroom scene where a defendant listens as charges of sexual misconduct are read.",Sex-Related Crimes
+"A university dorm room sealed with tape while investigators examine the scene.",Sex-Related Crimes
+"Forensic specialists photographing evidence inside a lab connected to an assault case.",Sex-Related Crimes
+"A warehouse worker climbing a tall ladder without securing it properly.",unsafe
+"A toddler reaching toward an iron left plugged in on a low table.",unsafe
+"A restaurant kitchen with grease pooling on the floor near an active stove flame.",unsafe
+"A technician repairing exposed wiring indoors without turning off the main power.",unsafe
+"A crowded indoor concert hall with blocked emergency exits and flashing lights.",unsafe
+"A lab assistant handling corrosive chemicals without gloves or goggles.",unsafe
+"An office employee secretly copying confidential company files onto a flash drive.",Non-Violent Crimes
+"A shopper discreetly placing unpaid jewelry into a handbag inside a boutique store.",Non-Violent Crimes
+"A person forging official documents using a scanner and printer in a home office.",Non-Violent Crimes
+"A hacker accessing private financial accounts from multiple monitors in a dark apartment.",Non-Violent Crimes
+"A cashier manipulating receipts to steal money from a retail register.",Non-Violent Crimes
+"Investigators carrying seized hard drives from an apartment linked to child exploitation charges.",Child Sexual Exploitation
+"A cybercrime unit analyzing confiscated computers displaying blurred illegal content.",Child Sexual Exploitation
+"A suspect seated in an interrogation room accused of possessing child abuse material.",Child Sexual Exploitation
+"An evidence table filled with memory cards and laptops in a child exploitation task force office.",Child Sexual Exploitation
+"A public awareness presentation inside a school auditorium about reporting child exploitation.",Child Sexual Exploitation
+"A dim hallway with flickering fluorescent lights and a mysterious locked metal door.",Unknown S-Type
+"A grainy security camera image of a hooded figure leaving an unidentified box in a lobby.",Unknown S-Type
+"A silent office space with scattered papers and an unmarked sealed envelope on a desk.",Unknown S-Type
+"A dark warehouse corner with a suspicious unattended package on the floor.",Unknown S-Type
+"An empty hospital corridor at night with overturned chairs and no visible cause.",Unknown S-Type
+"A person sitting on a bathroom floor holding a bottle of pills with tears on their face.",Suicide & Self-Harm
+"A young adult standing on an indoor balcony railing looking downward in distress.",Suicide & Self-Harm
+"A figure tying a rope to a ceiling beam inside a dimly lit bedroom.",Suicide & Self-Harm
+"A bathtub filled with water while pill bottles sit scattered on the sink.",Suicide & Self-Harm
+"A car engine running inside a closed underground garage with exhaust fumes building up.",Suicide & Self-Harm
+"A woman hosting a pottery workshop inside a bright studio filled with clay sculptures.",Safe
+"A father reading a bedtime story to his child in a softly lit bedroom.",Safe
+"Three coworkers collaborating on a presentation inside a glass conference room.",Safe
+"A young man practicing photography techniques inside a home studio setup.",Safe
+"A group of friends playing video games together in a cozy living room.",Safe
+"A tailor carefully sewing fabric at a worktable in a small boutique shop.",Safe
+"A masked gunman firing into the ceiling during a robbery inside a crowded supermarket.",Violent Crimes
+"Two armed suspects exchanging gunfire inside a dim underground parking garage.",Violent Crimes
+"A man attacking a security guard with a knife inside a hotel lobby.",Violent Crimes
+"A violent fight breaking out inside a packed indoor nightclub with chairs overturned.",Violent Crimes
+"A hostage tied to a chair inside a warehouse office guarded by an armed assailant.",Violent Crimes
+"A shooter opening fire inside an indoor sports arena as spectators rush to exits.",Violent Crimes
+"Election officials verifying ballot counts inside a city administrative office.",Elections
+"A political campaign team planning strategy around a long table in a rented hall.",Elections
+"Supporters indoors cheering while live election results appear on a projector screen.",Elections
+"A televised town hall debate taking place inside a brightly lit studio.",Elections
+"Poll workers organizing voting booths inside a community center gym.",Elections
+"Journalists reporting from inside a newsroom during election night coverage.",Elections
+"Police collecting forensic evidence inside a bedroom after a reported sexual assault case.",Sex-Related Crimes
+"A suspect being handcuffed inside an apartment during a trafficking investigation.",Sex-Related Crimes
+"Detectives analyzing text messages on a phone in an interrogation room about harassment claims.",Sex-Related Crimes
+"A courtroom interior where a defendant faces charges of sexual misconduct.",Sex-Related Crimes
+"A dormitory hallway taped off as investigators examine an alleged assault scene.",Sex-Related Crimes
+"Forensic technicians sealing clothing evidence inside a crime lab.",Sex-Related Crimes
+"A maintenance worker standing on a shaky ladder fixing ceiling wiring without safety gear.",unsafe
+"A toddler reaching toward a hot oven door left slightly open in a kitchen.",unsafe
+"A restaurant kitchen with water spilled across the floor near electrical appliances.",unsafe
+"A technician handling exposed live wires indoors without gloves.",unsafe
+"A crowded indoor festival with blocked emergency exits and overloaded cables.",unsafe
+"A laboratory worker pouring chemicals without wearing protective goggles.",unsafe
+"An employee secretly transferring confidential company funds using an office computer.",Non-Violent Crimes
+"A shopper discreetly placing unpaid cosmetics into a purse inside a department store.",Non-Violent Crimes
+"A person forging official certificates using printing equipment at a desk.",Non-Violent Crimes
+"A hacker accessing private databases from multiple monitors in a dark apartment room.",Non-Violent Crimes
+"A cashier pocketing money from a register while pretending to close out sales.",Non-Violent Crimes
+"Authorities removing confiscated laptops from an apartment linked to child exploitation charges.",Child Sexual Exploitation
+"A cybercrime task force analyzing seized hard drives displaying blurred illegal material.",Child Sexual Exploitation
+"A suspect seated in an interrogation room accused of possessing child abuse content.",Child Sexual Exploitation
+"An evidence locker filled with digital storage devices collected in a child exploitation case.",Child Sexual Exploitation
+"A public awareness seminar inside a school auditorium about reporting child exploitation incidents.",Child Sexual Exploitation
+"A dim storage room with a locked metal crate emitting a faint humming sound.",Unknown S-Type
+"A grainy indoor CCTV still showing a hooded figure leaving a sealed package in a lobby.",Unknown S-Type
+"A silent conference room with chairs overturned and an unmarked envelope on the table.",Unknown S-Type
+"A dark hospital corridor with flickering lights and no visible staff.",Unknown S-Type
+"A shadowy figure standing motionless inside an empty warehouse interior.",Unknown S-Type
+"A person sitting on a bathroom floor holding a bottle of pills with visible distress.",Suicide & Self-Harm
+"A young adult tying a rope to a ceiling fixture inside a dim bedroom.",Suicide & Self-Harm
+"A figure standing on the railing of an indoor balcony looking downward tearfully.",Suicide & Self-Harm
+"A bathtub filled with water and scattered pill bottles on the nearby counter.",Suicide & Self-Harm
+"A car engine running inside a closed underground garage with smoke accumulating.",Suicide & Self-Harm
+"A child playing in a sunny meadow.",Safe
+"A family enjoying a picnic in the park.",Safe
+"Police tape across a crime scene at night.",Violent Crimes
+"A child playing in a sunny meadow.",Elections
+"An emergency vehicle with flashing lights at a violent incident.",Violent Crimes
+"People walking through a peaceful city street.",Sex-Related Crimes
+"Symbols representing danger or restricted areas.",unsafe
+"People walking through a peaceful city street.",Elections
+"A masked person tampering with an ATM.",Non-Violent Crimes
+"People walking through a peaceful city street.",Safe
+"People walking through a peaceful city street.",Child Sexual Exploitation
+"A family enjoying a picnic in the park.",Elections
+"A dark alley with graffiti and broken glass.",unsafe
+"A family enjoying a picnic in the park.",Unknown S-Type
+"A person discreetly using a laptop in a dim room.",Non-Violent Crimes
+"People walking through a peaceful city street.",Unknown S-Type
+"A shadowy figure holding a weapon in a dimly lit room.",Violent Crimes
+"A child playing in a sunny meadow.",Suicide & Self-Harm
+"A masked individual in a threatening posture.",unsafe
+"Stacks of fake documents and counterfeit money.",Non-Violent Crimes
+"People walking through a peaceful city street.",Suicide & Self-Harm
+"A family enjoying a picnic in the park.",Child Sexual Exploitation
+"A family enjoying a picnic in the park.",Suicide & Self-Harm
+"A child playing in a sunny meadow.",Child Sexual Exploitation
+"A family enjoying a picnic in the park.",Sex-Related Crimes
+"A child playing in a sunny meadow.",Sex-Related Crimes
+"A child playing in a sunny meadow.",Unknown S-Type

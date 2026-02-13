@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toxic Content Detector</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f4f9; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #333; text-align: center; }
+        
+        input[type="text"] { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; transition: background 0.3s; }
+        button:hover { background-color: #45a049; }
+        
+        #preview-container { margin-top: 20px; text-align: center; display: none; }
+        #preview-image { max-width: 100%; max-height: 400px; border-radius: 5px; border: 1px solid #ddd; }
+        
+        #result { margin-top: 20px; padding: 20px; border-radius: 5px; display: none; }
+        .safe { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .toxic { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        
+        .loader { border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 20px auto; display: none; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🛡️ AI Toxic Content Detector</h1>
+    <p style="text-align: center; color: #666;">Paste an image URL to detect unsafe content.</p>
+    
+    <input type="text" id="urlInput" placeholder="Paste Image URL here (e.g., Cloudinary link)...">
+    <button onclick="analyzeImage()">Analyze Content</button>
+    <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
+    
+    <div style="text-align: center;">
+        <button onclick="fetchHistory()" style="background-color: #333; width: auto; padding: 10px 20px;">
+            📜 View Scan History
+        </button>
+    </div>
+
+    <div id="history-container" style="display: none; margin-top: 20px;">
+        <h3>Recent Scans</h3>
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <thead>
+                <tr style="background: #f8f9fa; text-align: left;">
+                    <th style="padding: 10px; border-bottom: 2px solid #ddd;">Type</th>
+                    <th style="padding: 10px; border-bottom: 2px solid #ddd;">Content</th>
+                    <th style="padding: 10px; border-bottom: 2px solid #ddd;">Verdict</th>
+                    <th style="padding: 10px; border-bottom: 2px solid #ddd;">Time</th>
+                </tr>
+            </thead>
+            <tbody id="history-body">
+                </tbody>
+        </table>
+    </div>
+
+    <div id="preview-container">
+        <h3>Image Preview:</h3>
+        <img id="preview-image" src="" alt="Image Preview">
+    </div>
+
+    <div class="loader" id="loader"></div>
+
+    <div id="result">
+        <h2 id="verdict"></h2>
+        <p><strong>AI Caption:</strong> <span id="caption-text"></span></p>
+        <p><strong>Confidence:</strong> <span id="confidence-score"></span></p>
+    </div>
+</div>
+
+<script>
+    async function analyzeImage() {
+        const url = document.getElementById('urlInput').value;
+        const resultDiv = document.getElementById('result');
+        const loader = document.getElementById('loader');
+        const previewContainer = document.getElementById('preview-container');
+        const previewImage = document.getElementById('preview-image');
+
+        if (!url) { alert("Please enter a URL!"); return; }
+
+        previewImage.src = url;
+        previewContainer.style.display = 'block';
+        
+        resultDiv.style.display = 'none';
+        loader.style.display = 'block';
+
+        try {
+            const response = await fetch('http://127.0.0.1:8000/analyze_url', {                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ image_url: url })
+            });
+
+            const data = await response.json();
+            loader.style.display = 'none';
+
+            if (response.ok) {
+                resultDiv.style.display = 'block';
+                document.getElementById('caption-text').innerText = data.caption;
+                document.getElementById('confidence-score').innerText = (data.confidence * 100).toFixed(1) + "%";
+                
+                const verdict = document.getElementById('verdict');
+                if (data.is_toxic) {
+                    resultDiv.className = 'toxic';
+                    verdict.innerText = "🚨 UNSAFE: " + data.prediction;
+                } else {
+                    resultDiv.className = 'safe';
+                    verdict.innerText = "✅ SAFE: " + data.prediction;
+                }
+            } else {
+                alert("Error: " + data.detail);
+            }
+        } catch (error) {
+            loader.style.display = 'none';
+            alert("Could not connect to server. Is app.py running?");
+            console.error(error);
+        }
+    }
+   async function fetchHistory() {
+        const historyContainer = document.getElementById('history-container');
+        const historyBody = document.getElementById('history-body');
+        
+        // Toggle visibility
+        if (historyContainer.style.display === 'block') {
+            historyContainer.style.display = 'none';
+            return;
+        }
+
+        try {
+            const response = await fetch('http://127.0.0.1:8000/history'); 
+            if (!response.ok) {
+                throw new Error(`Server Error: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            historyBody.innerHTML = ""; 
+
+            if (data.length === 0) {
+                historyBody.innerHTML = "<tr><td colspan='4' style='text-align:center; padding:10px;'>No history found.</td></tr>";
+            }
+
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                
+                const safeCaption = item.generated_caption || "No caption available";
+                const safeInput = item.input || "No text content";
+                const safeTime = item.timestamp || "Unknown Time";
+                const safeImgUrl = item.image_url || "#";
+
+                let contentDisplay = "";
+                let typeIcon = "";
+                
+                if (item.type === 'image') {
+                    typeIcon = "📷";
+                    contentDisplay = `<a href="${safeImgUrl}" target="_blank">
+                        <img src="${safeImgUrl}" style="height: 40px; border-radius: 4px;" alt="scan">
+                    </a><br><small style="color:#666">${safeCaption.substring(0, 30)}...</small>`;
+                } else {
+                    typeIcon = "📝";
+                    contentDisplay = safeInput.length > 40 ? safeInput.substring(0, 40) + "..." : safeInput;
+                }
+
+                const isToxic = item.is_toxic; 
+                const verdictColor = isToxic ? "#721c24" : "#155724";
+                const verdictBg = isToxic ? "#f8d7da" : "#d4edda";
+                const verdictStyle = `background: ${verdictBg}; color: ${verdictColor}; padding: 3px 8px; border-radius: 4px; font-weight: bold;`;
+                
+                const safeVerdict = item.prediction || "Unknown";
+                const safeConf = item.confidence ? (item.confidence * 100).toFixed(1) + "%" : "N/A";
+
+                row.innerHTML = `
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;">${typeIcon}</td>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;">${contentDisplay}</td>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;">
+                        <span style="${verdictStyle}">${safeVerdict}</span>
+                        <br><small style="color:#666">${safeConf}</small>
+                    </td>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee; color: #666;">${safeTime}</td>
+                `;
+                historyBody.appendChild(row);
+            });
+
+            historyContainer.style.display = 'block';
+
+        } catch (error) {
+            console.error("Error fetching history:", error);
+            alert("Could not load history. Check Console (F12) for details.\nError: " + error.message);
+        }
+    }
+</script>
+
+</body>
+</html>
