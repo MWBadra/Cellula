@@ -10,11 +10,11 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 
 
-a="my key"
+a="GPT id"
 # base_url = "https://openrouter.ai/api/v1/"
 
 
-loader = TextLoader("my_bio.txt", encoding="utf-8")
+loader = TextLoader("D:/books and slides/Cellula26/Cellula/Cellula_3week_[MohamedBadra]/my_bio.txt", encoding="utf-8")
 docs = loader.load()
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
@@ -60,17 +60,22 @@ rag_chain = (
 )
 
 
-query1 = "Who are the key members of Led Zeppelin?"
+query1 = "What did Mohamed do during his R&D internship at EL-Sewedy Electric?"
 print(f"User: {query1}")
 response1 = rag_chain.invoke(query1)
 print(f"AI: {response1}\n")
 
-query2 = "Tell me about Gary Moore's style."
+query2 = "Can you describe the architecture and database used for the Ma3loma Reddit Clone?"
 print(f"User: {query2}")
 response2 = rag_chain.invoke(query2)
 print(f"AI: {response2}\n")
 
-query3 = "talk to me about pink floyd"
+query3 = "What kind of music, movies, and TV shows does Mohamed enjoy?"
 print(f"User: {query3}")
-response1 = rag_chain.invoke(query3)
-print(f"AI: {response1}\n")
+response3 = rag_chain.invoke(query3)
+print(f"AI: {response3}\n")
+
+query4 = "What machine learning models and techniques did Mohamed use in his Diabetes Prediction System?"
+print(f"User: {query4}")
+response4 = rag_chain.invoke(query4)
+print(f"AI: {response4}\n")
