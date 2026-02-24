@@ -24,37 +24,37 @@ def setup_backend():
     
     a=st.secrets["OPENAI_API_KEY"]  
     embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-    # dataset = load_dataset("openai/openai_humaneval")
-    # dataset = dataset['test']
-    # formatted_documents = []
+    dataset = load_dataset("openai/openai_humaneval")
+    dataset = dataset['test']
+    formatted_documents = []
 
-    # for item in dataset:
-    #     task_id = item['task_id']
-    #     prompt = item['prompt']
-    #     canonical_solution = item['canonical_solution']    
-    #     combined_text = f"Task ID: {task_id}\n\nFunction Definition and Docstring:\n{prompt}\n\nSolution Code:\n{canonical_solution}"
+    for item in dataset:
+        task_id = item['task_id']
+        prompt = item['prompt']
+        canonical_solution = item['canonical_solution']    
+        combined_text = f"Task ID: {task_id}\n\nFunction Definition and Docstring:\n{prompt}\n\nSolution Code:\n{canonical_solution}"
         
-    #     formatted_documents.append(combined_text)
+        formatted_documents.append(combined_text)
 
 
 
     embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
-    # docs = [Document(page_content=text) for text in formatted_documents]
+    docs = [Document(page_content=text) for text in formatted_documents]
 
-    # vectorstore = Chroma.from_documents(
-    #     documents=docs,
-    #     collection_name="humaneval_collection",
-    #     embedding=embedding_model,
-    #     persist_directory="./Code_generator_chromaDB",
-    # )
-
-
-    vectorstore = Chroma(
+    vectorstore = Chroma.from_documents(
+        documents=docs,
         collection_name="humaneval_collection",
+        embedding=embedding_model,
         persist_directory="./Code_generator_chromaDB",
-        embedding_function=embedding_model  
     )
+
+
+    # vectorstore = Chroma(
+    #     collection_name="humaneval_collection",
+    #     persist_directory="./Code_generator_chromaDB",
+    #     embedding_function=embedding_model  
+    # )
 
    
     retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
