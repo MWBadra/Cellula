@@ -10,11 +10,10 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 
 
-a="GPT id"
-# base_url = "https://openrouter.ai/api/v1/"
+a="key"
 
 
-loader = TextLoader("D:/books and slides/Cellula26/Cellula/Cellula_3week_[MohamedBadra]/my_bio.txt", encoding="utf-8")
+loader = TextLoader("my_bio.txt", encoding="utf-8")
 docs = loader.load()
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
@@ -38,16 +37,8 @@ Context: {context}
 Answer:"""
 prompt = PromptTemplate.from_template(template)
 llm = ChatOpenAI(model_name="gpt-5-nano",openai_api_key=a, temperature=0)
-# llm = ChatOpenAI(
-#     model="openai/gpt-oss-120b:free",  # <--- CHANGED THIS LINE
-#     openai_api_key=a,                  # Your variable for the API key
-#     base_url=base_url,                 # "https://openrouter.ai/api/v1"
-#     temperature=0,
-#     default_headers={
-#         "HTTP-Referer": "http://localhost:8000",
-#         "X-Title": "My RAG App"
-#     }
-# )
+
+
 
 def format_docs(docs):
     return "\n\n".join(doc.page_content for doc in docs)

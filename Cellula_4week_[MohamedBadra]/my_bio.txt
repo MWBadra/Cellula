@@ -1,0 +1,52 @@
+Name: Mohamed Badra (also known as Moaz)
+Contact & Profiles: Email: MohamedWBadra@gmail.com | GitHub: MWBadra | LinkedIn: linkedin.com/in/mwbadra
+
+--- Background & Education ---
+I am a Computer Engineering student at Ain Shams University (Fall 2023 - Spring 2027) with a strong focus on Data Science and Artificial Intelligence. My current GPA is 3.26. My relevant coursework includes Data Mining, AI Image Processing, Database Systems, Data Structures, OOP, Operating Systems, Advanced Algorithms, Web Development, and Computer Networks. I also hold an IELTS score of 7.5.
+
+--- Professional Experience & Internships ---
+1. R&D Software Development Intern at EL-Sewedy Electric - Iskraemeco (Summer 2025)
+   - Developed a full-stack web application for smart meter management using Java Spring Boot and Angular, facilitating real-time data processing.
+   - Implemented serial communication to read meter configurations and write parameter updates directly via COM port connections.
+   - Integrated Swagger for robust API documentation and enabled remote device management features.
+
+2. NLP Intern at Cellula Technologies (Current)
+   - Researching and implementing advanced Natural Language Processing techniques.
+   - Exploring Large Language Models (LLMs), the BERT family, Recurrent Neural Networks (LSTMs), and Parameter-Efficient Fine-Tuning (LoRA, QLoRA).
+   - Building full-stack AI applications involving Model Quantization, Hugging Face integrations, and Retrieval-Augmented Generation (RAG) using LangChain and FAISS.
+
+3. Mobile App Development Trainee at NTI Ministry of Communications (Summer 2025)
+   - Completed an intensive training program on Cross-Platform Development using Flutter and Dart, focusing on building scalable mobile applications.
+
+4. Competitive Programming Trainee at Coach Academy (Summer 2024)
+   - Awarded "Exceptional Performance" recognition in Level 2 training, demonstrating mastery of advanced algorithms including Number Theory, Bitmasks, and Binary Search.
+
+--- Technical Skills ---
+- Programming Languages: Python, Java, C/C++, C#, SQL, JavaScript, Dart, HTML/CSS.
+- Frameworks & AI Libraries: React.js, Spring Boot, FastAPI, Flutter, Express.js, Scikit-learn, Pandas, NumPy, Matplotlib, Hugging Face Transformers.
+- Databases & DevOps: MongoDB Atlas, SQL Server, Docker, Git.
+- Core Concepts: RESTful APIs, Machine Learning, Deep Learning, Natural Language Processing (NLP), Microservices, Data Structures & Algorithms, Object-Oriented Programming (OOP).
+
+--- Notable Projects ---
+1. Toxic Content Classifier (Cellula Internship): 
+   - Built an end-to-end full-stack AI app detecting toxic text and images. Used fine-tuned DistilBERT for text classification and BLIP for image captioning. Deployed with FastAPI, Docker, and MongoDB.
+
+2. Diabetes Prediction System: 
+   - Developed a medical diagnostic system achieving 96% accuracy using Gaussian Naive Bayes and KNN. Engineered a robust preprocessing pipeline handling severe class imbalance using SMOTE.
+
+3. Price Prediction Competition: 
+   - Achieved 3rd place in a Kaggle competition implementing advanced ML models and developing a RESTful API for model predictions.
+
+4. Ma3loma (Reddit Clone): 
+   - Architected a RESTful API using Express.js and React, managed a MongoDB Atlas database, and deployed a containerized microservices architecture utilizing the Google Gemini API.
+
+5. FOS Operating System: 
+   - Implemented virtual memory management in a custom OS kernel, including paging, page fault handling, and dynamic memory allocation in C.
+
+6. Social Network System: 
+   - Developed a graph-based platform in C++ supporting user management and a friend suggestion algorithm using BFS traversal up to 4 degrees of separation.
+
+--- Personal Interests & Goals ---
+I am deeply passionate about advancing my knowledge in Large Language Models (LLMs), Natural Language Processing (NLP), and image processing. My professional goal is to collaborate on open-source Data Science projects and build scalable, AI-driven web applications. 
+
+Outside of software engineering, I have a diverse taste in media and entertainment. I am an avid listener of 1970s, 1980s and 1990s Rock music. I also enjoy watching mafia movies set in NYC. For relaxation, I am a fan of TV shows like "The Amazing World of Gumball", "SpongBob" and "How I Met Your Mother".
