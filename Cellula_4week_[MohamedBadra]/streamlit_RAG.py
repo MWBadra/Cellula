@@ -208,7 +208,7 @@ elif st.session_state.app_mode == "chat":
                     # Call YOUR exact conversational chain
                     answer = conversational_rag_chain.invoke(
                         {"question": prompt},
-                        config={"configurable": {"session_id": "session_001"}} 
+                        config={"configurable": {"session_id": "session_002"}} 
                     )
                     st.markdown(answer)
                     st.session_state.messages.append({"role": "assistant", "content": answer})
