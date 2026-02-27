@@ -13,12 +13,10 @@ from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_core.chat_history import BaseChatMessageHistory
 from operator import itemgetter
 
-# --- UI CONFIGURATION ---
 st.set_page_config(page_title="Self-Learning AI", page_icon="🧠")
-st.title("🧠 Badra's Self-Learning Code Assistant")
+st.title("Self-Learning Code Assistant")
 st.write("Ask me a Python question. If I don't know it, you can teach me!")
 
-# --- YOUR EXACT BACKEND SETUP ---
 @st.cache_resource
 def setup_backend():
     
@@ -137,7 +135,6 @@ def learn_new_function(function_name, code, explanation):
     print(f" Successfully learned and memorized '{function_name}'!")
 
 
-# --- THE STREAMLIT UI LOGIC ---
 if "messages" not in st.session_state:
     st.session_state.messages = []
 if "app_mode" not in st.session_state:
@@ -149,7 +146,7 @@ for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-# MODE 1: TEACHING MODE
+
 if st.session_state.app_mode == "teaching":
     st.error("⚠️ Unknown function! I don't know this function. Please teach me so I can learn it!")
     
@@ -166,7 +163,7 @@ if st.session_state.app_mode == "teaching":
             if not f_name or not f_code or not f_desc:
                 st.warning("Hold up! You need to fill out all three fields before saving.")
             else:
-                # Call YOUR exact function
+                
                 learn_new_function(f_name, f_code, f_desc)
                 
                 success_msg = f"✅ Thank you! I have saved `{f_name}` to my memory. Try asking me for it now!"
@@ -181,7 +178,7 @@ if st.session_state.app_mode == "teaching":
             st.session_state.pending_query = ""
             st.rerun()
 
-# MODE 2: NORMAL CHAT MODE
+
 elif st.session_state.app_mode == "chat":
     if prompt := st.chat_input("User: "):
         
@@ -190,22 +187,18 @@ elif st.session_state.app_mode == "chat":
             st.markdown(prompt)
 
         with st.chat_message("assistant"):
-            # Call YOUR exact routing function
             intent = classify_intent(prompt)
             
             if intent == "Explain":
-                # General knowledge path
                 response = llm.invoke(prompt).content
                 st.markdown(response)
                 st.session_state.messages.append({"role": "assistant", "content": response})
                 
             elif intent == "Generate":
-                # Call YOUR exact confidence function
                 best_doc, is_known = retrieve_with_confidence(prompt)
                 
                 if is_known:
                     st.markdown("*(Found in database. Generating...)*")
-                    # Call YOUR exact conversational chain
                     answer = conversational_rag_chain.invoke(
                         {"question": prompt},
                         config={"configurable": {"session_id": "session_002"}} 
@@ -214,7 +207,6 @@ elif st.session_state.app_mode == "chat":
                     st.session_state.messages.append({"role": "assistant", "content": answer})
                     
                 else:
-                    # Switch to teaching mode
                     st.session_state.app_mode = "teaching"
                     st.session_state.pending_query = prompt
                     st.rerun()
