@@ -23,7 +23,7 @@ class State(TypedDict):
     is_known: Optional[bool]
     generation: Optional[str]
 
-st.set_page_config(page_title="Self-Learning AI", page_icon="🧠")
+st.set_page_config(page_title="Self-Learning AI")
 st.title("Self-Learning Code Assistant")
 st.write("Ask me a Python question. If I don't know it, you can teach me!")
 
