@@ -30,15 +30,26 @@ st.write("Ask me a Python question. If I don't know it, you can teach me!")
 
 @st.cache_resource
 def setup_backend():
+    import shutil 
+    
     a = st.secrets["OPENAI_API_KEY"]  
     
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    db_path = os.path.join(current_dir, "Code_generator_chromaDB")
+    repo_db_path = os.path.join(current_dir, "Code_generator_chromaDB")
+    
+    writable_db_path = "/tmp/Code_generator_chromaDB"
+    
+    if not os.path.exists(writable_db_path):
+        shutil.copytree(repo_db_path, writable_db_path)
+        for root, dirs, files in os.walk(writable_db_path):
+            for file in files:
+                os.chmod(os.path.join(root, file), 0o666)
+
     embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
     vectorstore = Chroma(
         collection_name="humaneval_collection",
-        persist_directory=db_path,
+        persist_directory=writable_db_path,
         embedding_function=embedding_model  
     )
    
@@ -76,6 +87,7 @@ def setup_backend():
     )
     
     return llm, vectorstore, conversational_rag_chain
+
 
 llm, vectorstore, conversational_rag_chain = setup_backend()
 
