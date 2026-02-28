@@ -271,18 +271,17 @@ elif st.session_state.app_mode == "chat":
 
 # Can you explain exactly how the nested loops in that code work?
 
-# Write a Python function called calculate_toxicity_score that takes a text string and a blacklist of words, and returns a toxicity percentage.
+# Write a Python function called calculate_engagement_rate that takes likes, comments, and views, and returns the engagement percentage.
 
-# Name: calculate_toxicity_score
+# Name: calculate_engagement_rate
 
 # Code: 
-# def calculate_toxicity_score(text, blacklist):
-# words = text.lower().split()
-# if not words:
-# return 0.0
-# toxic_count = sum(1 for word in words if word in blacklist)
-# return (toxic_count / len(words)) * 100
+# def calculate_engagement_rate(likes, comments, views):
+#     if views <= 0:
+#         return 0.0
+#     total_interactions = likes + comments
+#     return (total_interactions / views) * 100
 
-# Explanation: Splits the text into lowercase words, counts how many appear in the blacklist, and returns the percentage of toxic words.
+# Explanation: Calculates the percentage of viewers who interacted with a post, safely returning 0.0 if there are no views to prevent a division by zero error.
 
-# Write the calculate_toxicity_score function.
+# Write the calculate_engagement_rate function.
