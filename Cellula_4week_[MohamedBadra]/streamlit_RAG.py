@@ -1,6 +1,5 @@
 import streamlit as st
 import os
-from langchain_openai import ChatOpenAI
 from datasets import load_dataset
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -14,6 +13,7 @@ from langchain_core.chat_history import BaseChatMessageHistory
 from operator import itemgetter
 from langgraph.graph import START, StateGraph, END
 from typing_extensions import TypedDict, Optional
+from langchain_google_genai import ChatGoogleGenerativeAI
 
 
 class State(TypedDict):
@@ -54,8 +54,7 @@ def setup_backend():
     )
    
     retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
-    llm = ChatOpenAI(model_name="o4-mini", openai_api_key=a, temperature=1)
-
+    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=a, temperature=1)
     prompt = ChatPromptTemplate.from_messages([
         ("system", "You are an expert Python coding assistant. Answer the user's coding questions using ONLY the provided context. Always format your Python code output using Markdown code blocks (```python ... ```). If the answer is not in the context, say 'I don't know'.\n\nContext:\n{context}"),
         MessagesPlaceholder(variable_name="chat_history"),
