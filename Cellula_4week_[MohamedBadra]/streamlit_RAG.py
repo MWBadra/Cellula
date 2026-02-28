@@ -54,7 +54,7 @@ def setup_backend():
     )
    
     retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
-    llm = ChatOpenAI(model_name="gpt-5-nano", openai_api_key=a, temperature=1)
+    llm = ChatOpenAI(model_name="o4-mini", openai_api_key=a, temperature=1)
 
     prompt = ChatPromptTemplate.from_messages([
         ("system", "You are an expert Python coding assistant. Answer the user's coding questions using ONLY the provided context. Always format your Python code output using Markdown code blocks (```python ... ```). If the answer is not in the context, say 'I don't know'.\n\nContext:\n{context}"),
@@ -257,3 +257,33 @@ elif st.session_state.app_mode == "chat":
                 answer = final_state["generation"]
                 st.markdown(answer)
                 st.session_state.messages.append({"role": "assistant", "content": answer})
+
+
+
+
+
+
+
+
+
+#test demo:
+
+# Write a Python function called has_close_elements that checks if numbers in a list are closer to each other than a threshold.
+
+# Can you explain exactly how the nested loops in that code work?
+
+# Write a Python function called calculate_toxicity_score that takes a text string and a blacklist of words, and returns a toxicity percentage.
+
+# Name: calculate_toxicity_score
+
+# Code: 
+# def calculate_toxicity_score(text, blacklist):
+# words = text.lower().split()
+# if not words:
+# return 0.0
+# toxic_count = sum(1 for word in words if word in blacklist)
+# return (toxic_count / len(words)) * 100
+
+# Explanation: Splits the text into lowercase words, counts how many appear in the blacklist, and returns the percentage of toxic words.
+
+# Write the calculate_toxicity_score function.
