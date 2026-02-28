@@ -54,7 +54,7 @@ def setup_backend():
     )
    
     retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
-    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=a, temperature=1)
+    llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", google_api_key=a, temperature=1)
     prompt = ChatPromptTemplate.from_messages([
         ("system", "You are an expert Python coding assistant. Answer the user's coding questions using ONLY the provided context. Always format your Python code output using Markdown code blocks (```python ... ```). If the answer is not in the context, say 'I don't know'.\n\nContext:\n{context}"),
         MessagesPlaceholder(variable_name="chat_history"),
