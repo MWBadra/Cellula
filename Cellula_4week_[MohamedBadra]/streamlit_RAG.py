@@ -12,50 +12,34 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_core.chat_history import BaseChatMessageHistory
 from operator import itemgetter
+from langgraph.graph import START, StateGraph, END
+from typing_extensions import TypedDict, Optional
+
+
+class State(TypedDict):
+    question: str
+    intent: Optional[str]
+    is_known: Optional[bool]
+    generation: Optional[str]
 
 st.set_page_config(page_title="Self-Learning AI", page_icon="🧠")
 st.title("Self-Learning Code Assistant")
 st.write("Ask me a Python question. If I don't know it, you can teach me!")
 
+
 @st.cache_resource
 def setup_backend():
+    a = st.secrets["OPENAI_API_KEY"]  
     
-    a=st.secrets["OPENAI_API_KEY"]  
-    embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-    # dataset = load_dataset("openai/openai_humaneval")
-    # dataset = dataset['test']
-    # formatted_documents = []
-
-    # for item in dataset:
-    #     task_id = item['task_id']
-    #     prompt = item['prompt']
-    #     canonical_solution = item['canonical_solution']    
-    #     combined_text = f"Task ID: {task_id}\n\nFunction Definition and Docstring:\n{prompt}\n\nSolution Code:\n{canonical_solution}"
-        
-    #     formatted_documents.append(combined_text)
-
-
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    
     db_path = os.path.join(current_dir, "Code_generator_chromaDB")
     embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-
-    # docs = [Document(page_content=text) for text in formatted_documents]
-
-    # vectorstore = Chroma.from_documents(
-    #     documents=docs,
-    #     collection_name="humaneval_collection",
-    #     embedding=embedding_model,
-    #     persist_directory=db_path,
-    # )
-
 
     vectorstore = Chroma(
         collection_name="humaneval_collection",
         persist_directory=db_path,
         embedding_function=embedding_model  
     )
-
    
     retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
     llm = ChatOpenAI(model_name="gpt-5-nano", openai_api_key=a, temperature=1)
@@ -94,8 +78,8 @@ def setup_backend():
 
 llm, vectorstore, conversational_rag_chain = setup_backend()
 
-# --- YOUR EXACT CORE FUNCTIONS ---
-def classify_intent(query):
+def classify_intent_node(state: State):
+    user_query = state["question"]
     router_prompt = f"""
     Classify the intent of the following user query into exactly one of these two categories:
     1. Explain (if the user is asking for a general explanation, definition, or concept)
@@ -103,20 +87,67 @@ def classify_intent(query):
     
     Output ONLY the word 'Explain' or 'Generate'.
     
-    Query: {query}
+    Query: {user_query}
     """
     response = llm.invoke(router_prompt)
-    return response.content.strip()
+    intent_result = response.content.strip()
+    return {"intent": intent_result}
 
-def retrieve_with_confidence(query):
+def retrieve_node(state: State):
+    query = state["question"]
     results = vectorstore.similarity_search_with_score(query, k=3)
     if not results:
-        return None, False
+        return {"is_known": False}
     best_doc, score = results[0]
     print(f"  [DEBUG] Match Score: {score}")
     if score > 1:  
-        return None, False
-    return best_doc, True
+        return {"is_known": False}
+    return {"is_known": True} 
+
+def explain_node(state: State):
+    query = state["question"]
+    response = llm.invoke(query)
+    return {"generation": response.content}
+    
+def generate_rag_node(state: State):
+    query = state["question"]
+    response = conversational_rag_chain.invoke(
+                {"question": query},
+                config={"configurable": {"session_id": "session_002"}} 
+            )
+    return {"generation": response}
+
+def human_teaching_node(state: State):
+   
+    return {"generation": "UNKNOWN_FUNCTION_FLAG"}
+
+def route_intent(state: State):
+    if state["intent"] == "Explain":
+        return "explain_node"
+    return "retrieve_node"
+
+def route_knowledge(state: State):
+    if state["is_known"]:
+        return "generate_rag_node"
+    return "human_teaching_node"
+
+workflow = StateGraph(State)
+
+workflow.add_node("classify_intent", classify_intent_node)
+workflow.add_node("explain_node", explain_node)
+workflow.add_node("retrieve_node", retrieve_node)
+workflow.add_node("generate_rag_node", generate_rag_node)
+workflow.add_node("human_teaching_node", human_teaching_node)
+
+workflow.add_edge(START, "classify_intent") 
+workflow.add_conditional_edges("classify_intent", route_intent) 
+workflow.add_conditional_edges("retrieve_node", route_knowledge) 
+
+workflow.add_edge("explain_node", END)
+workflow.add_edge("generate_rag_node", END)
+workflow.add_edge("human_teaching_node", END)
+
+app = workflow.compile()
 
 def learn_new_function(function_name, code, explanation):
     document = f"""
@@ -132,8 +163,6 @@ def learn_new_function(function_name, code, explanation):
             metadata={"type": "function"}
         )
     ])
-    print(f" Successfully learned and memorized '{function_name}'!")
-
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -163,9 +192,7 @@ if st.session_state.app_mode == "teaching":
             if not f_name or not f_code or not f_desc:
                 st.warning("Hold up! You need to fill out all three fields before saving.")
             else:
-                
                 learn_new_function(f_name, f_code, f_desc)
-                
                 success_msg = f"✅ Thank you! I have saved `{f_name}` to my memory. Try asking me for it now!"
                 st.session_state.messages.append({"role": "assistant", "content": success_msg})
                 
@@ -178,7 +205,6 @@ if st.session_state.app_mode == "teaching":
             st.session_state.pending_query = ""
             st.rerun()
 
-
 elif st.session_state.app_mode == "chat":
     if prompt := st.chat_input("User: "):
         
@@ -187,26 +213,17 @@ elif st.session_state.app_mode == "chat":
             st.markdown(prompt)
 
         with st.chat_message("assistant"):
-            intent = classify_intent(prompt)
+            initial_state = {"question": prompt}
+            final_state = app.invoke(initial_state)
             
-            if intent == "Explain":
-                response = llm.invoke(prompt).content
-                st.markdown(response)
-                st.session_state.messages.append({"role": "assistant", "content": response})
-                
-            elif intent == "Generate":
-                best_doc, is_known = retrieve_with_confidence(prompt)
-                
-                if is_known:
+            if final_state["generation"] == "UNKNOWN_FUNCTION_FLAG":
+                st.session_state.app_mode = "teaching"
+                st.session_state.pending_query = prompt
+                st.rerun()
+            else:
+                if final_state.get("is_known"):
                     st.markdown("*(Found in database. Generating...)*")
-                    answer = conversational_rag_chain.invoke(
-                        {"question": prompt},
-                        config={"configurable": {"session_id": "session_002"}} 
-                    )
-                    st.markdown(answer)
-                    st.session_state.messages.append({"role": "assistant", "content": answer})
-                    
-                else:
-                    st.session_state.app_mode = "teaching"
-                    st.session_state.pending_query = prompt
-                    st.rerun()
+                
+                answer = final_state["generation"]
+                st.markdown(answer)
+                st.session_state.messages.append({"role": "assistant", "content": answer})

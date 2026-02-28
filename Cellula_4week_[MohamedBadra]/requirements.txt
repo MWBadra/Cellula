@@ -7,3 +7,4 @@ langchain-community
 datasets
 sentence-transformers
 pysqlite3-binary
+langgraph

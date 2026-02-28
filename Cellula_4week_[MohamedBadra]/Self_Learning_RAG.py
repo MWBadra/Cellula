@@ -10,9 +10,18 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_core.chat_history import BaseChatMessageHistory
 from operator import itemgetter
+from langgraph.graph import START, StateGraph,END
+from typing_extensions import TypedDict,Optional
 
 
-a="key"
+class State(TypedDict):
+    question: str
+    intent: Optional[str]
+    is_known: Optional[bool]
+    generation: Optional[str]
+
+
+a= "key"
 dataset = load_dataset("openai/openai_humaneval")
 dataset = dataset['test']
 formatted_documents = []
@@ -50,10 +59,10 @@ retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
 llm = ChatOpenAI(model_name="gpt-5-nano",openai_api_key=a, temperature=1)
 
 prompt = ChatPromptTemplate.from_messages([
-    ("system", "You are an expert Python coding assistant. Answer the user's coding questions using ONLY the provided context. If the answer is not in the context, say 'I don't know'.\n\nContext:\n{context}"),
-    MessagesPlaceholder(variable_name="chat_history"),
-    ("human", "{question}")
-])
+        ("system", "You are an expert Python coding assistant. Answer the user's coding questions using ONLY the provided context. Always format your Python code output using Markdown code blocks (```python ... ```). If the answer is not in the context, say 'I don't know'.\n\nContext:\n{context}"),
+        MessagesPlaceholder(variable_name="chat_history"),
+        ("human", "{question}")
+    ])
 
 store = {}
 def get_session_history(session_id: str) -> BaseChatMessageHistory:
@@ -80,7 +89,8 @@ conversational_rag_chain = RunnableWithMessageHistory(
     history_messages_key="chat_history"
 )
 
-def classify_intent(query):
+def classify_intent(state: State):
+    user_query = state["question"]
     router_prompt = f"""
     Classify the intent of the following user query into exactly one of these two categories:
     1. Explain (if the user is asking for a general explanation, definition, or concept)
@@ -88,30 +98,36 @@ def classify_intent(query):
     
     Output ONLY the word 'Explain' or 'Generate'.
     
-    Query: {query}
+    Query: {user_query}
     """
     
     response = llm.invoke(router_prompt)
     
-    return response.content.strip()
+    intent_result = response.content.strip()
+    
+   
+    return {"intent": intent_result}
 
 
-
-def retrieve_with_confidence(query):
+def retrieve_node(state: State):
+    query=state["question"]
     results = vectorstore.similarity_search_with_score(query, k=3)
     
     if not results:
-        return None, False
+        return {"is_known": False}
         
     best_doc, score = results[0]
     
     print(f"  [DEBUG] Match Score: {score}")
     if score >1:  
-        return None, False
+        return {"is_known": False}
         
-    return best_doc, True
+    return {"is_known": True} 
 
-def learn_new_function(function_name, code, explanation):
+def human_teaching_node(state: State):
+    function_name=input("  -> What is the function name? ")
+    code = input("  -> Paste the Python code: ")
+    explanation = input("  -> Give a brief explanation: ")
     document = f"""
     Function: {function_name}
     Code:
@@ -126,9 +142,58 @@ def learn_new_function(function_name, code, explanation):
             metadata={"type": "function"}
         )
     ])
-    print(f" Successfully learned and memorized '{function_name}'!")
+    return {"generation": "Thank you! I learned the function."}
 
-print("\n=== WELCOME TO YOUR SELF-LEARNING RAG ===")
+def explain_node(state: State):
+    query=state["question"]
+    response = llm.invoke(query)
+    return {"generation": response.content}
+    
+
+def generate_rag_node(state: State):
+    query=state["question"]
+    response = conversational_rag_chain.invoke(
+                {"question": query},
+                config={"configurable": {"session_id": "session_001"}} 
+            )
+    return {"generation": response}
+
+
+
+
+def route_intent(state: State):
+    if state["intent"] == "Explain":
+        return "explain_node"
+    return "retrieve_node"
+
+def route_knowledge(state: State):
+    if state["is_known"]:
+        return "generate_rag_node"
+    return "human_teaching_node"
+
+
+
+
+workflow = StateGraph(State)
+
+workflow.add_node("classify_intent", classify_intent)
+workflow.add_node("explain_node", explain_node)
+workflow.add_node("retrieve_node", retrieve_node)
+workflow.add_node("generate_rag_node", generate_rag_node)
+workflow.add_node("human_teaching_node", human_teaching_node)
+
+workflow.add_edge(START, "classify_intent") 
+workflow.add_conditional_edges("classify_intent", route_intent) 
+workflow.add_conditional_edges("retrieve_node", route_knowledge) 
+
+workflow.add_edge("explain_node", END)
+workflow.add_edge("generate_rag_node", END)
+workflow.add_edge("human_teaching_node", END)
+
+app = workflow.compile()
+
+
+print("\n=== WELCOME TO YOUR LANGGRAPH AI ===")
 print("Type 'exit' to quit.\n")
 
 while True:
@@ -136,30 +201,8 @@ while True:
     if query.lower() == 'exit':
         break
         
-    intent = classify_intent(query)
-    print(f" Classified as '{intent}'")
+    initial_state = {"question": query}
     
-    if intent == "Explain":
-        response = llm.invoke(query)
-        print(f"AI:\n{response.content}\n")
-        
-    elif intent == "Generate":
-        best_doc, is_known = retrieve_with_confidence(query)
-        
-        if is_known:
-            print(" Found in database. Generating...")
-            response = conversational_rag_chain.invoke(
-                {"question": query},
-                config={"configurable": {"session_id": "session_001"}} 
-            )
-            print(f"AI:\n{response}\n")
-        else:
-            print("Unknown function!")
-            print("AI: I don't know this function. Please teach me so I can learn it!")
-            
-            func_name = input("  -> What is the function name? ")
-            func_code = input("  -> Paste the Python code: ")
-            func_desc = input("  -> Give a brief explanation: ")
-            
-            learn_new_function(func_name, func_code, func_desc)
-            print("AI: Thank you! I have saved this to my memory. Try asking me for it now!\n")
+    final_state = app.invoke(initial_state)
+    
+    print(f"AI:\n{final_state['generation']}\n")
