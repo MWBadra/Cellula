@@ -18,6 +18,7 @@ from typing_extensions import TypedDict, Optional
 
 class State(TypedDict):
     question: str
+    chat_history: list
     intent: Optional[str]
     is_known: Optional[bool]
     generation: Optional[str]
@@ -106,8 +107,21 @@ def retrieve_node(state: State):
 
 def explain_node(state: State):
     query = state["question"]
-    response = llm.invoke(query)
+    history = state.get("chat_history", [])
+    
+    messages = [
+        ("system", "You are an expert Python assistant. Use the conversation history to understand context. Keep explanations concise.")
+    ]
+    
+    for msg in history:
+        role = "human" if msg["role"] == "user" else "ai"
+        messages.append((role, msg["content"]))
+        
+    messages.append(("human", query))
+    
+    response = llm.invoke(messages)
     return {"generation": response.content}
+ 
     
 def generate_rag_node(state: State):
     query = state["question"]
@@ -213,8 +227,12 @@ elif st.session_state.app_mode == "chat":
             st.markdown(prompt)
 
         with st.chat_message("assistant"):
-            initial_state = {"question": prompt}
+            initial_state = {
+                "question": prompt,
+                "chat_history": st.session_state.messages[:-1] 
+            }
             final_state = app.invoke(initial_state)
+            
             
             if final_state["generation"] == "UNKNOWN_FUNCTION_FLAG":
                 st.session_state.app_mode = "teaching"
