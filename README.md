@@ -13,15 +13,18 @@ Welcome to my repository for the **Cellula Technologies NLP Internship**. This r
     ├── Quantization_techniques_Research/  # Task 0: Research on Model Quantization
     └── Toxic_content_classification_project/ # Task 1: End-to-End Toxic Content Classifier
 ```
-## 📅 Week 1: Transformers & Architectures
-**Focus:** Deep dive into the BERT family, Parameter-Efficient Fine-Tuning (PEFT), and Recurrent Neural Networks.
+## 📅 Week 4: Generative AI & Tooling
+**Focus:** Building interactive Generative AI applications and streamlining developer workflows.
 
-### **BERT Family Research**
-* **Architecture Analysis:** Analyzed architectural differences between **DistilBERT**, **ALBERT**, and standard **BERT**.
-* **Efficiency:** Explored **LoRA** (Low-Rank Adaptation) and **QLoRA** for memory-efficient fine-tuning.
+### 🔹 Self-Learning Code Generator
+A specialized application designed to assist in generating and optimizing code snippets using LLMs.
+* **Live Demo:** [Self-Learning Code Generator](https://self-learning-code-generator.streamlit.app/)
+* **Interface:** Built with **Streamlit** for a seamless, interactive user experience.
 
-### **LSTM Implementation**
-* **Sequence Classification:** Built and trained a custom **LSTM** model from scratch to handle sequential data tasks.
+---
+
+## 📅 Week 3: Advanced LLMs & RAG
+**Focus:** Exploring Retrieval-Augmented Generation (RAG) and scaling Large Language Model capabilities.
 
 ---
 
@@ -55,3 +58,28 @@ The code and the application are already deployed on **Hugging Face Spaces** and
 | **Frontend** | HTML, JavaScript |
 | **Database** | MongoDB (Motor) |
 | **DevOps** | Docker |
+
+
+---
+
+## 📅 Week 1: Transformers & Architectures
+**Focus:** Deep dive into the BERT family, Parameter-Efficient Fine-Tuning (PEFT), and Recurrent Neural Networks.
+
+### **BERT Family Research**
+* **Architecture Analysis:** Analyzed architectural differences between **DistilBERT**, **ALBERT**, and standard **BERT**.
+* **Efficiency:** Explored **LoRA** (Low-Rank Adaptation) and **QLoRA** for memory-efficient fine-tuning.
+
+### **LSTM Implementation**
+* **Sequence Classification:** Built and trained a custom **LSTM** model from scratch to handle sequential data tasks.
+## 📅 Week 1: Transformers & Architectures
+**Focus:** Deep dive into the BERT family, Parameter-Efficient Fine-Tuning (PEFT), and Recurrent Neural Networks.
+
+### **BERT Family Research**
+* **Architecture Analysis:** Analyzed architectural differences between **DistilBERT**, **ALBERT**, and standard **BERT**.
+* **Efficiency:** Explored **LoRA** (Low-Rank Adaptation) and **QLoRA** for memory-efficient fine-tuning.
+
+### **LSTM Implementation**
+* **Sequence Classification:** Built and trained a custom **LSTM** model from scratch to handle sequential data tasks.
+
+---
+
