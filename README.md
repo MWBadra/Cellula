@@ -3,7 +3,7 @@
 Welcome to my repository for the **Cellula Technologies NLP Internship**. This repo contains all weekly tasks, research, and projects completed during the program, focusing on Large Language Models (LLMs), Model Optimization, and Full-Stack AI Deployment.
 
 
-```
+
 ## 📅 Week 5: API Deployment & Containerization (MLOps)
 **Focus:** Converting a local LangGraph AI agent into a production-ready web service using FastAPI and Docker.
 
