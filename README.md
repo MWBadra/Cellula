@@ -2,17 +2,20 @@
 
 Welcome to my repository for the **Cellula Technologies NLP Internship**. This repo contains all weekly tasks, research, and projects completed during the program, focusing on Large Language Models (LLMs), Model Optimization, and Full-Stack AI Deployment.
 
-## 📂 Repository Structure
 
-```text
-├── Cellula_1week_[MohamedBadra]/    # Week 1: Transformers & Architectures
-│   ├── BERT_Family/                 # Research on DistilBERT, ALBERT, LoRA, QLoRA
-│   └── LSTM/                        # LSTM Model implementation & Report
-│
-└── Cellula_2week_[MohamedBadra]/    # Week 2: Optimization & Deployment
-    ├── Quantization_techniques_Research/  # Task 0: Research on Model Quantization
-    └── Toxic_content_classification_project/ # Task 1: End-to-End Toxic Content Classifier
 ```
+## 📅 Week 5: API Deployment & Containerization (MLOps)
+**Focus:** Converting a local LangGraph AI agent into a production-ready web service using FastAPI and Docker.
+
+### 🔹 Enterprise Backend Architecture
+Upgraded the autonomous Self-Learning RAG system into a modular, containerized API.
+* **FastAPI Integration:** Built a highly concurrent web server with a `/query` POST endpoint that returns both the AI's response and the internal routing path (Explain vs. Generate vs. Teach).
+* **Modular Codebase:** Refactored a single monolithic script into a professional multi-directory architecture (`api/`, `graph/`, `rag/`).
+* **Docker Containerization:** Packaged the entire application, including the ChromaDB vector database and lightweight PyTorch dependencies, into a standalone Docker image for seamless deployment across any OS.
+
+---
+
+
 ## 📅 Week 4: Generative AI & Tooling
 **Focus:** Building interactive Generative AI applications and streamlining developer workflows.
 
